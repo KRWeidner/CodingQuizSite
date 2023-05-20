@@ -1,17 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>JavaScript Quiz</title>
+
+<head>
+    <title>Coding Quiz</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
-  </head>
-  <body>
-    <header>
-    </header>
+</head>
 
+<body>
+    <header>
+        <h1>Coding Fundamentals Quiz</h1>
+    </header>
+    <h3 class="timer">Timer: <span id="timerSeconds"></span></h3>
+    <a href="">View Highscores</a>
     <main>
+        <section class="firstPage">
+            <p>Words</p>
+            <button class="startQuizButton">Begin Quiz</button>
+        </section>
+        <section class="quizPages">
+            <h3>Question <span id="questionNumber"></span>: </h3>
+            <p id="question"></p>
+            <div class="buttons">
+                <button id="button1"></button>
+                <button id="button2"></button>
+                <button id="button3"></button>
+                <button id="button4"></button>
+            </div>
+            <p id="answerResult"></p>
+        </section>
+        <section class="finalScorePage">
+            <h3>All Done!</h3>
+            <p>Your final score is: <span id="finalScore"></span></p>
+            <input type="text" name="finalScoreInput" placeholder="Enter Final Score" />
+            <button id="submitFinalScore"></button>
+        </section>
     </main>
     <script src="assets/js/script.js"></script>
-  </body>
+</body>
+
 </html>
