@@ -13,6 +13,8 @@ var finalScore = document.querySelector("#finalScore");
 var quizPages = document.querySelector(".quizPages");
 var finalScorePage = document.querySelector(".finalScorePage");
 var firstPage = document.querySelector(".firstPage");
+var submitFinalScoreButton = document.querySelector("#submitFinalScore");
+var inputBox = document.querySelector("#inputBox");
 
 var timer;
 var timerCount = 75;
@@ -38,6 +40,8 @@ var quizQuestions = [{
     answer: "pop()",
     options: ["concat()", "push()", "splice()", "pop()"]
 }]
+
+var highscores = [];
 
 startQuizButton.addEventListener("click", startQuiz);
 quizPages.setAttribute("style", "display:none");
@@ -65,7 +69,6 @@ function answerQuestions(i) {
 }
 
 buttons.forEach(item => {item.addEventListener("click", function(event) {
-    console.log(event.target.textContent + " "+quizQuestions[questionCount].answer);
     if(event.target.textContent === quizQuestions[questionCount].answer)
     {
         answerResult.textContent = "Correct!";
@@ -101,3 +104,13 @@ function startTimer() {
         timerCount--;
     }, 1000);
 }
+
+submitFinalScoreButton.addEventListener("click", function(){
+    highscores.push(inputBox.value + " - " + finalScore.textContent);
+    localStorage.setItem("Highscore", JSON.stringify(highscores));
+    console.log(localStorage.getItem("Highscore"));
+    setTimeout(function() {
+        window.location.href = "highscores.html";
+    }, 7000);
+    //window.location.href = "highscores.html";
+})
