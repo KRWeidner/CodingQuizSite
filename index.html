@@ -12,8 +12,10 @@
     <header>
         <h1>Coding Fundamentals Quiz</h1>
     </header>
-    <h3 class="timer">Timer: <span id="timerSeconds"></span></h3>
-    <a href="">View Highscores</a>
+    <section class="subHeader">
+        <a href="">View Highscores</a>
+        <h3 class="timer">Timer: <span id="timerSeconds"></span></h3>
+    </section>
     <main>
         <section class="firstPage">
             <p>Words</p>
@@ -31,10 +33,12 @@
             <p id="answerResult"></p>
         </section>
         <section class="finalScorePage">
-            <h3>All Done!</h3>
-            <p>Your final score is: <span id="finalScore"></span></p>
-            <input type="text" name="finalScoreInput" placeholder="Enter Final Score" />
-            <button id="submitFinalScore"></button>
+            <div class="finalPageDiv">
+                <h3>All Done!</h3>
+                <p>Your final score is: <span id="finalScore"></span></p>
+                <input type="text" name="finalScoreInput" placeholder="Enter Final Score" />
+                <button id="submitFinalScore">Submit</button>
+            </div>
         </section>
     </main>
     <script src="assets/js/script.js"></script>

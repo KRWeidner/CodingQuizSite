@@ -1,0 +1,48 @@
+:root {
+    --backgroundColor: #F2F5F5;
+}
+
+* {
+    margin: 15px;
+}
+
+body {
+    background-color: var(--backgroundColor);
+    display: flex;
+    flex-direction: column;
+    font-family: Cambria, Helvetica, sans-serif;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.subHeader {
+    display: inline-flex;
+    flex-wrap: wrap;
+    font-weight: bold;
+    justify-items: center;
+    justify-content: space-between;
+}
+
+.firstPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quizPages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.finalScorePage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
