@@ -42,7 +42,8 @@ var quizQuestions = [{
     options: ["concat()", "push()", "splice()", "pop()"]
 }]
 
-var highscores = [];
+var highscoreInital;
+var highscoreNumber;
 
 startQuizButton.addEventListener("click", startQuiz);
 quizPages.setAttribute("style", "display:none");
@@ -66,7 +67,9 @@ function answerQuestions(i) {
         button4.textContent = quizQuestions[i].options[3]; 
     }
     else{
-        displayFinalResults();
+        setTimeout(function() {
+            displayFinalResults();
+        },2000);
     }
 }
 
@@ -111,8 +114,11 @@ function startTimer() {
 }
 
 submitFinalScoreButton.addEventListener("click", function(){
-    highscores.push(inputBox.value + " - " + finalScore.textContent);
-    localStorage.setItem("Highscore", JSON.stringify(highscores));
-    console.log(localStorage.getItem("Highscore"));
+    var number = localStorage.getItem("HighscoreNumber");
+    if(number === null || number < finalScore.textContent)
+    {
+        localStorage.setItem("HighscoreNumber", finalScore.textContent);
+        localStorage.setItem("HighscoreInitials", inputBox.value);
+    }
     window.location.href = "highscores.html";
 })
