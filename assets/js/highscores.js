@@ -11,4 +11,5 @@ goBack.addEventListener("click", function(){
 
 clearHighscores.addEventListener("click", function(){
     localStorage.clear();
+    nameHighscore.textContent = "";
 })

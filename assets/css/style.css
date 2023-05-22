@@ -1,5 +1,6 @@
 :root {
     --backgroundColor: #F2F5F5;
+    --buttonColor: #4E2059;
 }
 
 * {
@@ -33,6 +34,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 .quizPages {
@@ -46,3 +48,64 @@ header {
     flex-direction: column;
     align-items: center;
 }
+
+.resultDiv {
+    border-top: 3px solid #636263;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 120%;
+}
+
+#answerResult {
+    text-align: center;
+}
+
+button{
+    background-color: var(--buttonColor);
+    padding: 8px;
+    font-size: 100%;
+    border-radius: 10px;
+    border: var(--buttonColor);
+    color: white;
+    min-width: 80px;
+}
+
+.buttons {
+    flex: 1 2;
+}
+
+button:hover {
+    opacity: 80%;
+}
+
+#questionText {
+    font-size: 120%;
+    text-align: center;
+}
+
+input {
+    font-size: 18px;
+    margin-right: 0;
+}
+
+.highscoreResults {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.highscoreButtons {
+    display: inline-flex;
+    justify-items: center;
+}
+
+#nameHighscore {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px 0 10px 10px;
+    border-radius: 10px;
+    background-color: #C9C5C9;
+    min-width: 20%;
+}
+

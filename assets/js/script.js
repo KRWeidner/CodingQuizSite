@@ -15,6 +15,7 @@ var finalScorePage = document.querySelector(".finalScorePage");
 var firstPage = document.querySelector(".firstPage");
 var submitFinalScoreButton = document.querySelector("#submitFinalScore");
 var inputBox = document.querySelector("#inputBox");
+var resultDiv = document.querySelector(".resultDiv");
 
 var timer;
 var timerCount = 75;
@@ -50,6 +51,7 @@ finalScorePage.setAttribute("style", "display:none");
 function startQuiz() {
     startTimer();
     firstPage.setAttribute("style", "display:none");
+    resultDiv.setAttribute("style","display:none");
     quizPages.setAttribute("style", "display:flex");
     answerQuestions(questionCount);
 }
@@ -69,13 +71,16 @@ function answerQuestions(i) {
 }
 
 buttons.forEach(item => {item.addEventListener("click", function(event) {
+    resultDiv.setAttribute("style","display:flex");
     if(event.target.textContent === quizQuestions[questionCount].answer)
     {
+        answerResult.setAttribute("style","color:green");
         answerResult.textContent = "Correct!";
         questionCount++;
         answerQuestions(questionCount); 
     }
     else{
+        answerResult.setAttribute("style","color:red");
         answerResult.textContent = "Wrong";
         questionCount++;
         timerCount = timerCount-10;
@@ -94,6 +99,7 @@ function displayFinalResults() {
 function startTimer() {
     // Sets timer
     timer = setInterval(function () {
+        timerCount--;
         timerElement.textContent = timerCount;
         // if time =0 or all questions are answered
         if (timerCount === 0) {
@@ -101,7 +107,6 @@ function startTimer() {
             clearInterval(timer);
             displayFinalResults();
         }
-        timerCount--;
     }, 1000);
 }
 
@@ -109,8 +114,5 @@ submitFinalScoreButton.addEventListener("click", function(){
     highscores.push(inputBox.value + " - " + finalScore.textContent);
     localStorage.setItem("Highscore", JSON.stringify(highscores));
     console.log(localStorage.getItem("Highscore"));
-    setTimeout(function() {
-        window.location.href = "highscores.html";
-    }, 7000);
-    //window.location.href = "highscores.html";
+    window.location.href = "highscores.html";
 })
