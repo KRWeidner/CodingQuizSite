@@ -14,11 +14,15 @@
     </header>
     <section class="subHeader">
         <a href="highscores.html">View Highscores</a>
-        <h3 class="timer">Timer: <span id="timerSeconds"></span></h3>
+        <h3 class="timer">Timer: <span id="timerSeconds">75</span></h3>
     </section>
     <main>
         <section class="firstPage">
-            <p id="quizSummaryText">Words</p>
+            <p id="quizSummaryText">This is a short quiz that tests on some basic coding fundaments.
+                 Answer all questions as quickly and correctly as you can. 
+                 Your final score will be based on your finishing time. 
+                 For every wrong answer selected, 10 seconds will be subtracted from the clock. 
+                 You have 75 seconds. Good luck!</p>
             <button class="startQuizButton">Begin Quiz</button>
         </section>
         <section class="quizPages">
@@ -30,13 +34,15 @@
                 <button id="button3"></button>
                 <button id="button4"></button>
             </div>
-            <p id="answerResult"></p>
+            <div class = "resultDiv">
+                <p id="answerResult"></p>
+            </div>
         </section>
         <section class="finalScorePage">
             <div class="finalPageDiv">
                 <h3>All Done!</h3>
                 <p>Your final score is: <span id="finalScore"></span></p>
-                <input type="text" name="finalScoreInput" id="inputBox" placeholder="Enter Initials" />
+                <input type="text" maxlength="3" name="finalScoreInput" id="inputBox" placeholder="Enter Initials" />
                 <button id="submitFinalScore">Submit</button>
             </div>
         </section>
