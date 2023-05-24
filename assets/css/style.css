@@ -7,6 +7,7 @@
     margin: 15px;
 }
 
+/* setting background color for the whole page, universal fonts */
 body {
     background-color: var(--backgroundColor);
     display: flex;
@@ -14,6 +15,7 @@ body {
     font-family: Cambria, Helvetica, sans-serif;
 }
 
+/* generally setting display: flex on column and center for all css classes */
 header {
     display: flex;
     flex-direction: column;
@@ -30,6 +32,7 @@ header {
     justify-content: space-between;
 }
 
+/* This first page styles the start quiz button and intro sumamry text */
 .firstPage {
     display: flex;
     flex-direction: column;
@@ -37,18 +40,22 @@ header {
     text-align: center;
 }
 
+/* this styles the questions text and options buttons */
 .quizPages {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* this styles the results page where we see our score and can input our name+score */
 .finalScorePage {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* This adds the grey border separating the buttons options from answer
+response output (correct/wrong) */
 .resultDiv {
     border-top: 3px solid #636263;
     display: flex;
@@ -61,6 +68,7 @@ header {
     text-align: center;
 }
 
+/* adding color to buttons, rounding the corners, button text color... */
 button{
     background-color: var(--buttonColor);
     padding: 8px;
@@ -78,6 +86,7 @@ button{
     flex-wrap: wrap;
 }
 
+/* adjusting the size of the option buttons when screen size is smaller */
 @media screen and (max-width:700px){
     .buttons {
         flex: 0 0 50%;
@@ -85,6 +94,7 @@ button{
     }
 }
 
+/* Adding effect to button when hovering to help indicate which button we're picking */
 button:hover {
     opacity: 80%;
 }
@@ -110,6 +120,8 @@ input {
     justify-items: center;
 }
 
+/* styles the displayed name+score on the highscore.html page in a grey box 
+with some styling */
 #nameHighscore {
     display: flex;
     justify-content: flex-start;

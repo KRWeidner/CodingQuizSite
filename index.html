@@ -13,10 +13,12 @@
         <h1>Coding Fundamentals Quiz</h1>
     </header>
     <section class="subHeader">
+        <!-- create link to redirect to highscores.html and timer element -->
         <a href="highscores.html">View Highscore</a>
         <h3 class="timer">Timer: <span id="timerSeconds">75</span></h3>
     </section>
     <main>
+        <!-- firstPage displays the quiz summary and the begin quiz button -->
         <section class="firstPage">
             <p id="quizSummaryText">This is a short quiz that tests on some basic coding fundaments.
                  Answer all questions as quickly and correctly as you can. 
@@ -25,6 +27,8 @@
                  You have 75 seconds. Good luck!</p>
             <button class="startQuizButton">Begin Quiz</button>
         </section>
+        <!-- quizPages will be totally populated by JS and will diplay
+        the question, option buttons, and the result: correct or wrong -->
         <section class="quizPages">
             <h3>Question<span id="questionNumber"></span></h3>
             <p id="questionText"></p>
@@ -38,6 +42,8 @@
                 <p id="answerResult"></p>
             </div>
         </section>
+        <!-- finalScorePage will diplay the users score, input box for users name
+        and the submit button -->
         <section class="finalScorePage">
             <div class="finalPageDiv">
                 <h3>All Done!</h3>
