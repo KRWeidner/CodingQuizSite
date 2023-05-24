@@ -17,6 +17,7 @@ var submitFinalScoreButton = document.querySelector("#submitFinalScore");
 var inputBox = document.querySelector("#inputBox");
 var resultDiv = document.querySelector(".resultDiv");
 
+//defining some constants including our timer clock and our question options
 var timer;
 var timerCount = 75;
 var questionCount = 0;
@@ -45,10 +46,13 @@ var quizQuestions = [{
 var highscoreInital;
 var highscoreNumber;
 
+//on click start quiz button, run function startQuiz and set firstPage to display none
+//quiz section and final results section start as display none
 startQuizButton.addEventListener("click", startQuiz);
 quizPages.setAttribute("style", "display:none");
 finalScorePage.setAttribute("style", "display:none");
 
+//start timer countdown, change display values and call answerQuestion function
 function startQuiz() {
     startTimer();
     firstPage.setAttribute("style", "display:none");
@@ -57,6 +61,9 @@ function startQuiz() {
     answerQuestions(questionCount);
 }
 
+//while questionCount < the total number of questions, set question text element,
+//question number, and all the option buttons text
+//if we've reached the end of the questions go to final results section
 function answerQuestions(i) {
     if(i < quizQuestions.length){
         questionNumber.textContent = questionCount + 1;
@@ -67,12 +74,18 @@ function answerQuestions(i) {
         button4.textContent = quizQuestions[i].options[3]; 
     }
     else{
+        //wiat 2 seconds before moving so we can display correct or wrong for
+        //the user for the last question
         setTimeout(function() {
             displayFinalResults();
         },2000);
     }
 }
 
+//on click from any of the option buttons, retrieve textContent from clicked button,
+//if that answer matches the correct answer, set result element to correct,
+//otherwise set to wrong and - 10 sceonds from clock. 
+//Increment the questionCounter and recall answerQuestion function to load next question
 buttons.forEach(item => {item.addEventListener("click", function(event) {
     resultDiv.setAttribute("style","display:flex");
     if(event.target.textContent === quizQuestions[questionCount].answer)
@@ -91,6 +104,7 @@ buttons.forEach(item => {item.addEventListener("click", function(event) {
     }        
 })});
 
+//displays the last section final results, displays score, clears clock
 function displayFinalResults() {
     quizPages.setAttribute("style", "display:none");
     finalScorePage.setAttribute("style", "display:flex");
@@ -113,6 +127,10 @@ function startTimer() {
     }, 1000);
 }
 
+//on click of submit button on results final section, 
+//check if we have value already in localstorage and compare if so to get the highest number
+//if score is null or better, set localstorage variable to new name and score
+//redirect to highscore.html page
 submitFinalScoreButton.addEventListener("click", function(){
     var number = localStorage.getItem("HighscoreNumber");
     if(number === null || number < finalScore.textContent)
