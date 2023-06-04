@@ -5,7 +5,7 @@
 This website presents a short 5 question quiz on some coding basics. When answering each question, the page will display whether you selected the right or wrong answer. Upon finishing the quiz, or the time running out, you will be presented with your score which you can record with your initials to the site. This score is stored to localstorage and displayed on it's own html page.
 
 ## URL Link
-[https://krweidner.github.io/PasswordGenerator/](https://krweidner.github.io/CodingQuizSite/)
+(https://krweidner.github.io/CodingQuizSite/)
 
 ## Usage
 
